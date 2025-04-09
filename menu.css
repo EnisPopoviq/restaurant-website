@@ -1,0 +1,256 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: 
+    linear-gradient(rgba(36, 36, 36, 0.6), rgba(36, 36, 36, 0.6)),
+    url(img/ft-shafi-RRgwjUd-t3A-unsplash.jpg) no-repeat center center/cover;
+}
+
+.text-box {
+    position: relative;
+    height: 100vh;
+    display: flex;
+
+}
+
+.text-box .text {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #f5f5dc;
+    width: 220vh;
+    overflow: hidden;
+    background: none; /* Remove background from here */
+}
+
+.text-box .text::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+        linear-gradient(rgba(36, 36, 36, 0.6), rgba(36, 36, 36, 0.6)),
+        url(img/wyxina-tresse-rDIo23uIQrY-unsplash.jpg) no-repeat center center/cover;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.btn {
+    background-color: transparent; /* Make the background transparent */
+    color: #f5f5dc; /* Light text color */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 40px;
+    font-size: 0.6em;
+    border: 2px solid #f5f5dc; /* White border for visibility */
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+    transform: scale(1.1);
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next row */
+    gap: 5px;
+    padding: 20px;
+    border-radius: 20px;
+    justify-content: space-between;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48%; /* Set the width of each item to 48% to allow two items per row */
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.menu-item-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5dc;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item .menu-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+
+
+.menu-description {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+    font-size: 3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 30px;
+    border-radius: 5px;
+    width: 36%;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover .menu-description {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.menu-description h3 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.menu-description p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .menu-item {
+        width: 100%; /* Full width for mobile screens */
+        height: 200px;
+    }
+
+    .menu-description {
+        font-size: 1.2em;
+        left: 10px;
+        bottom: 5px;
+        padding: 5px 10px;
+    }
+
+    .menu-description h3 {
+        font-size: 1.4em;
+    }
+
+    .menu-description p {
+        font-size: 1em;
+    }
+}
+
+.menu-price {
+    position: absolute;
+    bottom: 10px; /* Position it at the bottom of the menu item */
+    right: 10px; /* Position it on the right side */
+    font-size: 1.6rem; /* Adjust font size */
+    font-weight: bold;
+    color: #ffffff; /* White color for price */
+    background-color: rgba(0, 0, 0, 0.6); /* Dark background for better visibility */
+    padding: 8px 15px; /* Some padding for the price */
+    border-radius: 5px; /* Rounded corners */
+    
+}
+
+
+
+.home-link {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 10;
+    color: #f5f5dc;
+    font-size: 1.2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid #f5f5dc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.home-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.reservation {
+    position: relative;
+    height: 70vh; /* Ensure there's space for the button to move vertically */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+}
+
+.reservation-title {
+    
+    top: 0;
+    left: 10%;
+    font-size: 3.2em;
+    padding: 10px 20px;
+}
+
+.reservation-paragraph {
+
+    position: absolute; /* Position it absolutely within the parent container */
+    right: 0; /* Move it to the right side */
+    top: 30%; /* Vertically center it */
+    transform: translateY(-50%); /* Fine-tune the centering */
+    font-size: 1.6em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px 20px;
+    color: #f5f5dc; /* Light text color to match the theme */
+    width: 60%; /* Adjust the width as necessary */
+    box-sizing: border-box; /
+
+
+}
+
+.reservation .potpis {
+    background: rgba(36, 36, 36, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    color: #f5f5dc;
+    width: 100%;
+    height: 100%;
+}
+
+.reservation-button {
+    position: absolute; /* Absolute positioning */
+    left: 4%; /* Align to the left side */
+    top: 50%; /* Start from the middle of the section */
+    transform: translateY(-50%); /* Move it up by half of its height to center it */
+    background: transparent;
+    color: #f5f5dc;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.8em;
+    transition: background 0.3s, color 0.3s;
+    border: 2px solid #f5f5dc;
+    cursor: pointer;
+}
+
+.reservation-button:hover {
+    background-color: #4d4a4a; 
+    color: #c7bdbd;
+   
+}
+
+

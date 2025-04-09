@@ -1,0 +1,658 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(130, 167, 51); /* Set the default background color to black */
+    background: 
+    linear-gradient(rgba(32, 32, 32, 0.6), rgba(65, 65, 65, 0.6)),
+    url(img/jason-leung-poI7DelFiVA-unsplash.jpg) no-repeat center center/cover;
+    background-size: cover; 
+    position: relative;
+    animation: moveBackground 60s linear infinite;
+    background-attachment: fixed;
+} 
+
+
+
+.nav-link {
+
+    font-size: 1.4em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: transparent;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: center top;
+    }
+    50% {
+        background-position: center bottom;
+    }
+    100% {
+        background-position: center top;
+    }
+}
+
+#loading-screen {
+   
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #c5c684; /* Initial cream color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;/* Ensure it's on top */
+    animation: fadeBackground 4s forwards; /* Fade background */
+
+  
+
+}
+
+/* Keyframe animation for fading the background */
+@keyframes fadeBackground {
+    0% {
+        background-color: #aba960; /* Start with cream color */
+        opacity: 1;
+    }
+    50% {
+        background-color: #aba960; /* Keep the same color */
+        opacity: 1;
+    }
+    100% {
+        background-color: #8e8d4e; /* Maintain the same color */
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* Styling the restaurant name text */
+#loading-text {
+    font-family: serif;
+    font-size: 6em;
+    color: #262323;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeInOut 4s forwards; /* Name fades in and out */
+}
+
+/* Keyframe animation for fade-in and fade-out of the name */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0; /* Start hidden */
+    }
+    50% {
+        opacity: 1; /* Fade in */
+    }
+    100% {
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* Your main content styling (this will be shown after loading) */
+#main-content {
+    display: none; /* Hide main content initially */
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Add a smooth fade-in effect */
+}
+
+/* Ensure all elements are clickable once loading screen disappears */
+body.loaded #main-content {
+    display: block;
+    opacity: 1;
+    pointer-events: all;  /* Make sure everything is clickable */
+}
+
+body.loaded #loading-screen {
+    display: none; /* Remove the loading screen completely */
+    pointer-events: none;  /* Disable interactions while loading screen is visible */
+}
+
+#about h2, 
+#about p {
+    color:#ffffff;
+}
+
+
+/* Try Our Most Popular Foods */
+#hours h2 {
+
+    position: relative;
+    background-color: #556b2f;
+    
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hours-title {
+    font-size: 2.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 0%;
+    border-radius: 10px;
+    color: #f5f5dc;
+}
+
+.hours-table {
+    display: flex;
+    background-color: #181818;
+    flex-direction: column;
+    align-items: center;
+  
+    
+    padding: 20px;
+    border-radius: 10px;
+   
+}
+
+.hours-item {
+    display: flex;
+    color: #f5f5dc;
+    justify-content: space-between;
+    width: 80%;
+    padding: 15px;
+    border-bottom: 1px solid #555;
+}
+
+.hours-item .day {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.hours-item .time {
+    font-size: 1.2em;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+/* Button styling */
+#hours .btn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 1.5em;
+}
+
+#contact h2,
+#contact p {
+    
+    color: #f5f5dc;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+/* Reserve Your Table and the paragraph below */
+#reservation h2,
+#reservation p {
+    color: #f5f5dc;
+
+}
+
+/* Get in Touch and the contact details */
+
+
+
+
+
+
+/* Hero Section with Video */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+}
+
+.hero .overlay {
+    background: 0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #f5f5dc;
+}
+
+
+
+.hero h1 {
+    font-size: 4.0em;
+   
+    font-family: serif;
+}
+
+.hero p {
+    font-size: 1.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+.btn {
+    background-color: #556b2f;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 40px;
+    font-size: 1.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: background 0.3s, transform 0.3s;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #3f4e24;
+    transform: scale(1.1);
+}
+
+
+/* Smooth scrolling effect */
+html {
+    scroll-behavior: smooth;
+}
+
+.dark-section {
+    background-color: #000; /* pure black */
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .dark-section .menu-item {
+    background-color: #111; /* a slightly lighter black for visual separation */
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  }
+  
+  .dark-section .menu-description {
+    color: white;
+  }
+  
+ 
+  .reservation {
+    
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color:#181818;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+/* Input group setup */
+.input-group {
+    width: 140%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    gap: 10px;
+}
+
+/* Input and textarea styling */
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect for input fields */
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Textarea-specific style */
+.input-group textarea {
+    min-height: 100px;
+    resize: vertical;
+    padding-top: 15px;
+}
+
+/* Button styling */
+.btn1 {
+    padding: 20px 25px;
+    font-size: 20px;
+    font-family: monospace;
+    color: #fff;
+    background-color: #556b2f;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 40%;
+    
+}
+
+.btn1:hover {
+    background-color: #435426;
+    transform: scale(1.1);
+    
+}
+
+
+
+/* Additional styling for layout */
+.reservation .input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .reservation {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        
+    }
+
+    .reservation .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .reservation .input-group:nth-child(odd) {
+        grid-column: span 1;
+    }
+
+    .reservation .input-group:nth-child(even) {
+        grid-column: span 1;
+    }
+}
+
+/* Add small space between items */
+.reservation input,
+.reservation textarea {
+    margin-bottom: 10px;
+}
+
+nav {
+    background-color: #f5f5dc;
+    padding: 10px 0;
+    text-align: center;
+    color: #f5f5dc;
+    position: sticky;
+    height: 80px;
+    top: 0;
+    display: flex;
+    justify-content: center; /* To space out the logo and the menu */
+    align-items: center; /* Vertically align the items */
+}
+
+nav .logo {
+    height: 100px; /* Adjust the logo size */
+    width: auto;  /* Maintain aspect ratio */
+    margin-left: 1%;
+    
+}
+nav .nav-links {
+    display: flex;
+    justify-content: center; /* Center the menu items */
+    width: 100%;
+    margin-right: 10%;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease; /* Apply transition to both transform and color */
+    display: inline-block; /* Ensure it's treated as an inline-block for scaling */
+}
+
+nav ul li a:hover {
+    color: #43433f; /* Change color on hover */
+    transform: scale(1.1); /* Apply scaling effect */
+}
+
+
+/* Circular Menu Item with Image Inside */
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.0);
+}
+
+.menu-item-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5dc;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item .menu-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-image {
+    transform: scale(1.0);
+}
+
+.menu-description {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 30px;
+    border-radius: 5px;
+    width: 36%;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover .menu-description {
+    background: rgba(0, 0, 0, 0.7);
+    
+}
+
+.menu-description h3 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.menu-description p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .menu-item {
+        height: 200px;
+    }
+
+    .menu-description {
+        font-size: 1.2em;
+        left: 10px;
+        bottom: 5px;
+        padding: 5px 10px;
+    }
+
+    .menu-description h3 {
+        font-size: 1.4em;
+    }
+
+    .menu-description p {
+        font-size: 1em;
+    }
+}
+
+.Glass {
+
+    position: relative;
+    height: 80vh;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.Glass .Transparent {
+
+    background: 0;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    
+   
+}
+
+.Glass .Transparent .reservation-title {
+
+    margin-bottom: 65%;   
+    color: #f5f5dc;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+
+
+.reservation form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.reservation input, .reservation textarea {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #f5f5dc;
+    border-radius: 5px;
+}
+
+
+
+.location-container {
+   
+    text-align: center;
+    padding: 20px;
+ 
+}
+
+.location iframe {
+  
+  border-radius: 10px; 
+  width: 90%;           
+}
+
+.location .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+
+footer {
+    background: #556b2f;
+    color: white;
+    padding: 30px 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.footer-left, .footer-right {
+    width: 45%;
+    min-width: 250px;
+}
+
+.footer-left h4,
+.footer-right h4 {
+    margin-bottom: 6px;
+    color: #f0f0f0;
+    font-size: 1.0em; /* Even smaller heading font size */
+}
+
+.footer-left p,
+.footer-right p {
+    margin: 3px 0;
+    font-size: 1.0em; /* Smaller font size */
+}
+
+.footer-credit {
+    text-align: center;
+    font-size: 0.8em; /* Smaller credit text */
+    opacity: 0.8;
+    border-top: 1px solid #ffffff22;
+    padding-top: 15px;
+}
