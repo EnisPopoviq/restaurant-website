@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: serif;
     background-color: rgb(130, 167, 51); /* Set the default background color to black */
     background: 
     linear-gradient(rgba(32, 32, 32, 0.6), rgba(65, 65, 65, 0.6)),
@@ -12,7 +12,20 @@ body {
     background-attachment: fixed;
 } 
 
+@media (max-width: 768px) {
+    
+    body {
+        background-size: auto 100%; 
+    }
+}
 
+img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  
 
 .nav-link {
 
@@ -105,8 +118,14 @@ body {
 /* Ensure all elements are clickable once loading screen disappears */
 body.loaded #main-content {
     display: block;
-    opacity: 1;
-    pointer-events: all;  /* Make sure everything is clickable */
+    opacity: 0;
+    animation: fadeInMain 1s ease-in-out 0.5s forwards;  /* Make sure everything is clickable */
+}
+
+@keyframes fadeInMain {
+    to {
+        opacity: 1;
+    }
 }
 
 body.loaded #loading-screen {
@@ -529,6 +548,10 @@ nav ul li a:hover {
         height: 200px;
     }
 
+    .menu-item .menu-image {
+        object-fit: cover;
+    }
+
     .menu-description {
         font-size: 1.2em;
         left: 10px;
@@ -542,6 +565,17 @@ nav ul li a:hover {
 
     .menu-description p {
         font-size: 1em;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1.2em;
+    }
+    .btn, .btn1 {
+        font-size: 1.2em;
+        padding: 10px 15px;
     }
 }
 
